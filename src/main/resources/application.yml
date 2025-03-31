@@ -1,0 +1,29 @@
+server:
+  port: 8282
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5434/school
+    username: postgres
+    password: password
+  jpa:
+    show-sql: true
+    open-in-view: false
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yml
+
+client:
+  urls:
+    ms-user: http://localhost:8181
+
+redis:
+  server:
+    urls: redis://localhost:6379
+
+jwt:
+  accessToken:
+    expiration:
+      time: 15
+  refreshToken:
+    expiration:
+      count: 50
+      time: 21600
